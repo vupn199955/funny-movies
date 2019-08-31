@@ -1,0 +1,31 @@
+{
+  "development": {
+    "username": "your_username",
+    "password": "your_password",
+    "database": "database_name",
+    "host": "database_host",
+    "port": 3306,
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "your_username",
+    "password": "your_password",
+    "database": "database_name",
+    "host": "database_host",
+    "port": 3306,
+    "dialect": "mysql",
+    "operatorsAliases": false
+    "logging": false
+  },
+  "production": {
+    "username": "your_username",
+    "password": "your_password",
+    "database": "database_name",
+    "host": "database_host",
+    "port": 3306,
+    "dialect": "mysql",
+    "operatorsAliases": false
+    "logging": false
+  }
+}
