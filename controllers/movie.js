@@ -5,7 +5,7 @@ module.exports = {
   share(req, res) {
     try {
       const videoId = req.params.id;
-      const userId = req.user.data.id;
+      const _userId = req.user.data.id;
       const youtube = new Google();
       youtube.getVideoInfo(videoId).then(_res => {
         const { data: { items: [item]}} = _res;
@@ -20,7 +20,7 @@ module.exports = {
             description,
             likeCount,
             dislikeCount,
-            userId
+            userId: _userId
           }
         }).spread((movie) => {
           return res.status(200).send(movie);
