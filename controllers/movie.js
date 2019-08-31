@@ -39,6 +39,9 @@ module.exports = {
           model: models.Users,
           as: 'user'
         }],
+        order: [
+          ['id', 'DESC'],
+        ],
       }).then(movies => {
         res.status(200).send(movies);
       }).catch(err => {
