@@ -5,6 +5,9 @@ var cookieParser = require('cookie-parser');
 var usersRouter = require('./routes/users');
 var moviesRouter = require('./routes/movies');
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 express.application.prefix = express.Router.prefix = function (path, configure) {
   var router = express.Router();
   this.use(path, router);
@@ -38,5 +41,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.listen(process.env.PORT || 3000);
 
 module.exports = app;
