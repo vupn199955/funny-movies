@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     Movies.belongsTo(models.Users, {
       foreignKey: 'userId',
-      onDelete: 'CASCADE'
+      onDelete: 'CASCADE',
+      as: 'user'
     })
   };
   return Movies;

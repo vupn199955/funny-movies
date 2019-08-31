@@ -1,4 +1,4 @@
-const Movie = require('../models').Movies;
+const models = require('../models');
 const Google = require('../services/google');
 
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
           return res.status(400).send("Not Found!");
         }
         const { id, snippet: { title, description }, statistics: { likeCount, dislikeCount }} = item;
-        Movie.findOrCreate(
+        models.Movies.findOrCreate(
           {where: {videoId: id},
           defaults: {
             title,
@@ -34,7 +34,12 @@ module.exports = {
   },
   getList(req, res) {
     try {
-      Movie.findAll().then(movies => {
+      models.Movies.findAll({
+        include: [{
+          model: models.Users,
+          as: 'user'
+        }],
+      }).then(movies => {
         res.status(200).send(movies);
       }).catch(err => {
         res.status(400).send(err);
