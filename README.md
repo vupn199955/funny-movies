@@ -12,7 +12,7 @@
 ```
 Now your BD has been created
 ## Set up env
-To using the youtube api you need to edit it in ./.env file at API_KEY
+To using the youtube api you need to edit it in ./.env file at API_KEY__
 Also if you want to use another SECRET_KEY for JWT generator you can edit it
 
 ## Start project in your local
