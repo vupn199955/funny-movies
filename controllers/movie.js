@@ -5,7 +5,7 @@ module.exports = {
   share(req, res) {
     try {
       const videoId = req.params.id;
-      const userId = req.user.id;
+      const userId = req.user.data.id;
       const youtube = new Google();
       youtube.getVideoInfo(videoId).then(_res => {
         const { data: { items: [item]}} = _res;
