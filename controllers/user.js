@@ -11,6 +11,9 @@ function comparePassword(pass, hash){
 };
 
 module.exports = {
+  getInfo(req, res) {
+    res.status(200).send({ username: req.user.data.username });
+  },
   login(req, res) {
     try {
       const { username, password } = req.body;
@@ -30,7 +33,7 @@ module.exports = {
           }
         }
         var token = JWT.createToken(user);
-        return res.status(200).send({token});
+        return res.status(200).send({token, username : user.username});
       })
     } catch(err) {
       return res.status(500).send(err);
