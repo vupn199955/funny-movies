@@ -30,3 +30,5 @@ Just need to run this script:
 ```
   npm run test
 ```
+## For client side
+I just copy the build folder in react project and rename to public
