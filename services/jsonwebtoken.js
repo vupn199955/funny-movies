@@ -6,6 +6,7 @@ module.exports = {
       expiresIn: 60*60
     });
   },
+  //This method as a middleware
   verifyToken(req, res, next) {
     const token = req.headers.authorization;
     if (!token) {
